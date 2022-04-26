@@ -2,7 +2,7 @@
 {% block content %}
 {% comment %} Create Audio Player in HTML {% endcomment %}
 <div class="container">
-    <div class="row">
+    {% comment %} <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default player">
                 <div class="player">
@@ -23,23 +23,31 @@
                         {{ station.name }}<span class="glyphicon glyphicon-play-circle"></span>
                     </h3>
                 </div>{% endcomment %}
-                <div class="panel-body">
+                {% comment %} <div class="panel-body">
                     <audio controls autoplay>
                         <source src="{{ station.url_resolved }}" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div> 
         </div>
-        {% comment %} Fast refresh page with a button {% endcomment %}
-        
-    </div>
+    </div> {% endcomment %}
 
-    <div class="col-md-12">
-        <span class="glyphicon glyphicon-refresh"></span>
-            <a href="{{ request.index }}"><button type="button" class="btn btn-primary">
-                Get another station
+
+    <div class="card" style="width: 20rem;">
+        <img class="card-img-top player-img" src="{{ station.favicon }}"  alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ station.name }}</h5>
+          <p class="card-text">{{ station.country }}</p>
+        </div>
+        <audio controls autoplay>
+            <source src="{{ station.url_resolved }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="card-footer text-muted">
+            <a href="{{ request.index }}"><button type="button" class="btn btn-warning">
+                <b>Get another station</b>
             <span class="glyphicon glyphicon-refresh"></span>
             </button>
-        </a>                    
-    </div>
+          </div>
+      </div>
 {% endblock %}

@@ -37,34 +37,18 @@ body {
     height: 150px;
     object-fit: cover;
   }
-    .player-info {
-        color: #000;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        padding: 0 15px;
-        width: 100%;
-        height: 100%;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-    .player-info h1 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 0;
-        padding: 0;
-    }
 
     .card {
         /* 50% Transparrent Backgroup */
         background-color: rgba(0, 0, 0, 0.0);
         border : 0px;
+        align-items: center;
     }
+
+    audio {
+        filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+        width: 200px;
+        height: 25px;
+        
+    }
+
