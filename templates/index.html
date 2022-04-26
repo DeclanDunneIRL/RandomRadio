@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+{% comment %} Create Audio Player in HTML {% endcomment %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default player">
+                <div class="player">
+                    <div class="player-img">
+                        <img src="{{ station.favicon }}" onerror="static/img/i-dunno.jpg" alt="player" class="player-img">
+                    </div>
+                </div>
+
+                <div class="player-info">
+                    <div class="player-info-title">
+                        <h3>{{ station.name }}</h3>
+                    </div>
+                    <div class="player-info-description">
+                        <p>{{ station.description }}</p>
+                    </div>
+                {% comment %} <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{ station.name }}<span class="glyphicon glyphicon-play-circle"></span>
+                    </h3>
+                </div>{% endcomment %}
+                <div class="panel-body">
+                    <audio controls autoplay>
+                        <source src="{{ station.url_resolved }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div> 
+        </div>
+        {% comment %} Fast refresh page with a button {% endcomment %}
+        
+    </div>
+
+    <div class="col-md-12">
+        <span class="glyphicon glyphicon-refresh"></span>
+            <a href="{{ request.index }}"><button type="button" class="btn btn-primary">
+                Get another station
+            <span class="glyphicon glyphicon-refresh"></span>
+            </button>
+        </a>                    
+    </div>
+{% endblock %}
