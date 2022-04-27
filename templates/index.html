@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+{% load static %}
+
 {% comment %} Create Audio Player in HTML {% endcomment %}
 <div class="container">
     {% comment %} <div class="row">
@@ -34,7 +36,7 @@
 
 
     <div class="card" style="width: 20rem;">
-        <img class="card-img-top player-img" src="{{ station.favicon }}"  alt="Card image cap">
+        <img class="card-img-top player-img" src="{{ station.favicon }}" onerror="this.src='{% static '/img/i-dunno.jpg' %}'" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ station.name }}</h5>
           <p class="card-text">{{ station.country }}</p>
